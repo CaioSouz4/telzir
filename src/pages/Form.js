@@ -1,45 +1,9 @@
-import { FormControl, InputLabel, makeStyles, MenuItem, Select, TextField, Zoom } from '@material-ui/core'
+import { FormControl, InputLabel, MenuItem, Select, TextField } from '@material-ui/core'
 import React, { useEffect, useState } from 'react'
 import { calculaComPlano, calcularSemPlano } from '../services/calculo';
-import './form.css';
-
-/* Ali, o cliente pode escolher os
-códigos das cidades de origem e destino, o tempo da ligação em minutos e escolher qual o
-plano FaleMais. O sistema deve mostrar dois valores: (1) o valor da ligação com o plano e (2)
-sem o plano. O custo inicial de aquisição do plano deve ser desconsiderado para este
-problema. */
-
-const useStyles = makeStyles(({
-    root: {
-      margin: "20px",
-      display: 'flex',
-      backgroundColor: "#424242",
-      minWidth: "20rem",
-      width: "20rem",
-      height: "10rem"
-    },
-    input: {
-        width: '15em',
-        margin: '1em'
-      /* flexWrap: 'wrap',
-      flex: '1 0 auto',
-      maxWidth: '60%',
-      color: "#dcdde1",
-      overflow: "auto" */
-    },
-    container: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        height: '100%',
-        width: '35%',
-        backgroundColor:' #bdc3c7',
-        padding: '4em',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        borderTopRightRadius: "97.5%",
-    }
-}));
-
+/* import './form.css'; */ 
+import useStyles from '../styles/formStyles'
+import Results from '../components/Results';
 
 export default function Form() {
 
@@ -50,7 +14,7 @@ export default function Form() {
     const [ddds, setDdds] = useState({origem: '', destino: ''});
     const [showValue, setShowValue] = useState(false);
     const [resultados, setResultados] = useState({semPlano: 0, comPlano: 0});
-    const [options, setOptions] = useState(["011",'016',"017","018"])
+    const [options] = useState(["011",'016',"017","018"])
 
     const handleChange = (event) => {
         setDdds({...ddds, [event.target.name]: event.target.value});
@@ -68,8 +32,8 @@ export default function Form() {
     useEffect(() => {
         if(ddds.origem !== '' && ddds.destino !== '' && tempoLigacao !== '' && tempoLigacao !== 0 && plano !== '') {
             setResultados({
-                semPlano: calcularSemPlano(ddds.origem, ddds.destino, tempoLigacao),
-                comPlano: calculaComPlano(ddds.origem, ddds.destino, tempoLigacao, plano)
+                semPlano: calcularSemPlano(ddds.origem, ddds.destino, tempoLigacao).toFixed(2),
+                comPlano: calculaComPlano(ddds.origem, ddds.destino, tempoLigacao, plano).toFixed(2)
             })
             setShowValue(true)
         } else {
@@ -80,17 +44,16 @@ export default function Form() {
     return (
         <div className={classes.container}>
             <div>
-
-            
-                <FormControl variant="filled" className={classes.input}>
-                    <InputLabel>DDD de origem</InputLabel>
+                <FormControl variant="filled" className={classes.formControl}>
+                    <InputLabel classes={{root: classes.formLabelRoot, focused: classes.formLabelFocused}}/* classes={{focused: classes.label}} */ /* classes={{root: classes.label}} */>DDD de origem</InputLabel>
                     <Select 
+                        className={classes.filled}
                         name='origem' 
                         value={ddds.origem} 
                         onChange={handleChange}>
                         {options.map((item, index) => {
                             if(parseInt(item) === ddds.destino) {
-                                return 
+                                return ''
                             } else {
                                 return <MenuItem key={index} value={parseInt(item)}>{`${item}`}</MenuItem>
                             }
@@ -98,15 +61,16 @@ export default function Form() {
                     </Select>
                 </FormControl>
             
-                <FormControl variant="filled" onChange={handleChange} className={classes.input}>
-                    <InputLabel>DDD de destino</InputLabel>
+                <FormControl variant="filled" onChange={handleChange} className={classes.formControl}>
+                    <InputLabel classes={{root: classes.formLabelRoot, focused: classes.formLabelFocused}}>DDD de destino</InputLabel>
                     <Select 
+                        className={classes.filled}
                         name='destino'
                         value={ddds.destino}
                         onChange={handleChange}>
                         {options.map((item, index) => {
                             if(parseInt(item) === ddds.origem) {
-                                return 
+                                return ''
                             } else {
                                 return <MenuItem key={index} value={parseInt(item)}>{`${item}`}</MenuItem>
                             }
@@ -118,10 +82,11 @@ export default function Form() {
                     </Select>
                 </FormControl>
                 
-                <FormControl variant="filled" onChange={handleChange} className={classes.input}>
-                    <InputLabel>Plano </InputLabel>
+                <FormControl variant="filled" onChange={handleChange} className={classes.formControl}>
+                    <InputLabel classes={{root: classes.formLabelRoot, focused: classes.formLabelFocused}}>Plano </InputLabel>
                     <Select 
                         value={plano}
+                        className={classes.filled}
                         onChange={handleChangePlano}>
                             
                         <MenuItem value={'FaleMais30'}>FaleMais 30</MenuItem>
@@ -130,32 +95,30 @@ export default function Form() {
                     
                     </Select>
                 </FormControl>
-
-            <TextField 
-                    id="filled-basic"
-                    type="number" 
-                    label="Tempo de ligação" 
-                    value={tempoLigacao}
-                    onChange={handleChangeTempo}
-                    className={classes.input}
-                    variant="filled" />  
-                    {showValue === true ? 'true' : 'false'}
-               {/*  {showValue ?  */}
-                <> 
-                    <Zoom in={showValue} >
-                        <div>
-                            <h1>
-                                {resultados.semPlano.toFixed(2)} 
-                            </h1>
-                            <h1>
-                                {resultados.comPlano.toFixed(2)} 
-                            </h1>
-                        </div>
-                    </Zoom>
-                </>
-              {/*   :
-                    ''
-                } */}
+                <FormControl variant="filled" onChange={handleChange} className={classes.formControl}>
+                    <TextField 
+                            InputLabelProps={{
+                                classes: {
+                                    root: classes.formLabelRoot,
+                                    focused: classes.formLabelFocused,
+                                },
+                            }} 
+                            InputProps={{
+                                classes: {
+                                    root: classes.filled
+                                  },
+                            }}
+                            type="number" 
+                            label="Tempo de ligação" 
+                            value={tempoLigacao}
+                            onChange={handleChangeTempo}
+                            className={classes.filled}
+                            variant="filled" />  
+                </FormControl>
+                <Results 
+                    showValue={showValue}
+                    resultados={resultados}
+                />
             </div>
         </div>
     )
