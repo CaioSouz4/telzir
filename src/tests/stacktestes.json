@@ -1,0 +1,37 @@
+[
+    {
+        "dddOrigemValue": "11",
+        "dddDestinoValue": "16",
+        "planoValue": "FaleMais30",
+        "tempoValue": "20",
+        "resultadoSemPlano": "38.00",
+        "resultadoComPlano": "0.00"
+    },
+
+    {
+        "dddOrigemValue": "11",
+        "dddDestinoValue": "17",
+        "planoValue": "FaleMais60",
+        "tempoValue": "80",
+        "resultadoSemPlano": "136.00",
+        "resultadoComPlano": "37.40"
+    },
+
+    {
+        "dddOrigemValue": "18",
+        "dddDestinoValue": "11",
+        "planoValue": "FaleMais120",
+        "tempoValue": "200",
+        "resultadoSemPlano": "380.00",
+        "resultadoComPlano": "167.20"
+    }, 
+
+    {
+        "dddOrigemValue": "11",
+        "dddDestinoValue": "17",
+        "planoValue": "FaleMais30",
+        "tempoValue": "80",
+        "resultadoSemPlano": "136.00",
+        "resultadoComPlano": "93.50"
+    }
+]
