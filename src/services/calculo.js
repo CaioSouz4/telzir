@@ -1,5 +1,4 @@
 export function calcularSemPlano (origem, destino, tempo) {
-  
     if(origem === 11) { 
        switch (destino) {
             case 16:
@@ -8,20 +7,31 @@ export function calcularSemPlano (origem, destino, tempo) {
                 return tempo * 1.7;
             case 18: 
                 return tempo * 0.9;
-           default:
+            default:
                return;
        } 
     } else if (origem === 16) {
         switch (destino) {
             case 11:
                return tempo * 2.9;
-             case 17:
+            case 17:
                 return tempo * 1.3;
             case 18: 
                 return tempo * 1.9; 
-           default:
+            default:
                return;
        } 
+    } else if (origem === 17) {
+        switch (destino) {
+            case 11:
+                return tempo * 2.0;
+            case 16:
+                return tempo * 3.0;
+            case 18: 
+                return tempo * 1.6; 
+            default:
+                return;
+        }
     } else {
         switch (destino) {
             case 11:

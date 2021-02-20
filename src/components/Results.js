@@ -2,7 +2,7 @@ import { Zoom } from '@material-ui/core'
 import React from 'react'
 import '../styles/form.css';
 
-export default function results(props) {
+export default function Results(props) {
     return (
         <Zoom in={props.showValue} >
             <div>
