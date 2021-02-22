@@ -13,6 +13,17 @@
 
 h1 {
     font-family: 'PT Serif', serif;
+    color: white;
+    text-shadow: 1px 3px 4px rgba(33,14,9,0.55);
+}
+
+.spanResult {
+    background: linear-gradient(45deg, #214f7c 30%, #337ab7 90%);
+    text-shadow: 1px 3px 4px rgba(33,14,9,0.55);   
+} 
+
+.h1Result {
+    text-align: center;
 }
 
 .input {

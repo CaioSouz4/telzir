@@ -8,7 +8,6 @@ const useStyles = makeStyles(theme => ({
         height: '100%',
         justifyContent: 'between',
         backgroundImage: `url(${Image})`,
-       //backgroundPosition: 'center', 
         backgroundSize: 'cover', 
         backgroundRepeat: 'no-repeat'
     },
@@ -30,6 +29,7 @@ const useStyles = makeStyles(theme => ({
         background: 'linear-gradient(45deg, #214f7c 30%, #337ab7 90%)',
         borderTopLeftRadius: 15,
         borderTopRightRadius: 15,
+        textAlign: 'start'
     },
 
     formLabelRoot: { 
@@ -47,16 +47,22 @@ const useStyles = makeStyles(theme => ({
         height: '100%',
         width: '60%',
         backgroundColor: '#2c3e50',
-        padding: '0 4em 0 4em',
-        //flexDirection: 'column',
+        padding: '0 0 0 4em',
         justifyContent: 'start',
         clipPath: 'polygon(0 0, 75% 0, 100% 100%, 0% 100%)',
-        //borderTopRightRadius: "97.5%",
-
+        
         [theme.breakpoints.down('sm')]: {
             padding: '3em',
-            width: 'auto',
-            clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
+            width: '100%',
+            height: 'fit-content',
+            clipPath: 'none',
+            borderTopRightRadius: "0",
+        },
+        [theme.breakpoints.only('md')]: {
+            padding: '3em',
+            width: '100%',
+            height: '100%',
+            clipPath: 'none',
             borderTopRightRadius: "0",
         },
     },
@@ -65,15 +71,33 @@ const useStyles = makeStyles(theme => ({
         color: 'white',
         marginTop: '3em',
         alignSelf: 'center',
-
+        alignItems: 'center',
+        [theme.breakpoints.down('sm')]: {
+            marginTop: 0,
+            width: 'auto',
+            textAlign: 'center',
+        },
     },
 
     form: {
         color: 'white',
         fontFamily: 'PT Serif , serif',
-        paddingTop: '4em',
         width: '40%',
+        alignSelf: 'center',
+        textAlign: 'center',
+
+        [theme.breakpoints.down('sm')]: {
+            width: 'auto',
+            padding: 0,           
+        },
+
+        [theme.breakpoints.down('sm')]: {
+            width: 'auto',
+            paddingTop: '4em',           
+        },
     }
+
+    
 }));
 
-export default useStyles
+export default useStyles;

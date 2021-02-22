@@ -1,0 +1,57 @@
+[
+
+    {
+        "dddOrigemValue": "11",
+        "dddDestinoValue": "16",
+        "planoValue": "FaleMais30",
+        "tempoValue": "20",
+        "resultadoSemPlano": "38.00",
+        "resultadoComPlano": "0.00"
+    },
+
+    {
+        "dddOrigemValue": "11",
+        "dddDestinoValue": "17",
+        "planoValue": "FaleMais60",
+        "tempoValue": "80",
+        "resultadoSemPlano": "136.00",
+        "resultadoComPlano": "37.40"
+    },
+
+    {
+        "dddOrigemValue": "18",
+        "dddDestinoValue": "11",
+        "planoValue": "FaleMais120",
+        "tempoValue": "200",
+        "resultadoSemPlano": "380.00",
+        "resultadoComPlano": "167.20"
+    },
+
+    {
+        "dddOrigemValue": "11",
+        "dddDestinoValue": "18",
+        "planoValue": "FaleMais30",
+        "tempoValue": "80",
+        "resultadoSemPlano": "72.00",
+        "resultadoComPlano": "49.50"
+    },
+
+    {
+        "dddOrigemValue": "16",
+        "dddDestinoValue": "18",
+        "planoValue": "FaleMais30",
+        "tempoValue": "80",
+        "resultadoSemPlano": "152.00",
+        "resultadoComPlano": "104.50"
+    },
+
+    {
+        "dddOrigemValue": "18",
+        "dddDestinoValue": "17",
+        "planoValue": "FaleMais60",
+        "tempoValue": "200",
+        "resultadoSemPlano": "220.00",
+        "resultadoComPlano": "169.40"
+    }
+    
+]

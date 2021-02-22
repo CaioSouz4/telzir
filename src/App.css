@@ -6,6 +6,10 @@
   width: 100%;
 }
 
+.header {
+  background-color: linear-gradient(45deg, #214f7c 30%, #337ab7 90%);
+}
+
 body {
   font-family: 'PT Serif', serif;
 }
