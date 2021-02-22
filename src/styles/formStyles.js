@@ -1,5 +1,5 @@
 import { makeStyles } from "@material-ui/core";
-import Image from '../assets/background1.jpg'; // Import using relative path
+import Image from '../assets/índice.jpg'; // Import using relative path
 
 const useStyles = makeStyles(theme => ({
 
@@ -28,9 +28,8 @@ const useStyles = makeStyles(theme => ({
         width: '15em',
         margin: '1em',
         background: 'linear-gradient(45deg, #214f7c 30%, #337ab7 90%)',
-        borderRadius: 15,
-
-              
+        borderTopLeftRadius: 15,
+        borderTopRightRadius: 15,
     },
 
     formLabelRoot: { 
@@ -46,26 +45,34 @@ const useStyles = makeStyles(theme => ({
         display: 'flex',
         flexWrap: 'wrap',
         height: '100%',
-        width: '35%',
-        backgroundColor:' #f45557',
+        width: '60%',
+        backgroundColor: '#2c3e50',
         padding: '0 4em 0 4em',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        borderTopRightRadius: "97.5%",
+        //flexDirection: 'column',
+        justifyContent: 'start',
+        clipPath: 'polygon(0 0, 75% 0, 100% 100%, 0% 100%)',
+        //borderTopRightRadius: "97.5%",
 
         [theme.breakpoints.down('sm')]: {
             padding: '3em',
             width: 'auto',
+            clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)',
             borderTopRightRadius: "0",
         },
     },
 
     containerResults: {
-        
+        color: 'white',
+        marginTop: '3em',
+        alignSelf: 'center',
+
     },
 
     form: {
-        paddingTop: '4em'
+        color: 'white',
+        fontFamily: 'PT Serif , serif',
+        paddingTop: '4em',
+        width: '40%',
     }
 }));
 

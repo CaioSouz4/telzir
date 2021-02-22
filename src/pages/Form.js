@@ -44,6 +44,9 @@ export default function Form() {
         <div className={classes.main}>
             <div className={classes.container}>
                 <div className={classes.form}>
+                    <h1>
+                        Calcule seu plano:  
+                    </h1>
                     <FormControl variant="filled" className={classes.formControl}>
                         <InputLabel classes={{root: classes.formLabelRoot, focused: classes.formLabelFocused}}>DDD de origem</InputLabel>
                         <Select
@@ -119,13 +122,15 @@ export default function Form() {
                             variant="filled" />  
                     </FormControl>
                 </div>
+                <div className={classes.containerResults}>
+                    <Results 
+                        showValue={showValue}
+                        resultados={resultados}
+                        plano={plano}
+                    />
+                </div>
             </div>
-            <div className={classes.containerResults}>
-                <Results 
-                    showValue={showValue}
-                    resultados={resultados}
-                />
-            </div>
+          
         </div>
     )
 }
