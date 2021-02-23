@@ -1,44 +1,45 @@
 <h3>Stack utilizada :<h3> 
 <ul>
-  <li>ReactJS<li>
-  <li>MaterialUI<li>
-  <li>React Testing Libraryg<li>
+  <li>ReactJS</li>
+  <li>MaterialUI</li>
+  <li>React Testing Library</li>
 </ul>
 
 <h3>Procedimento para executar a aplicação:</h3> 
 <ul>
-    <li>Baixar ou clonar repositório<li>
-    <li>Executar o comando  <code>npm install</code> no diretório raiz<li>
-    <li>Executar o comando  <code>npm start</code> no diretório raiz<li>
+    <li>Baixar ou clonar repositório</li>
+    <li>Executar o comando  <code>npm install</code> no diretório raiz</li>
+    <li>Executar o comando  <code>npm start</code> no diretório raiz</li>
 </ul>
 
 
 <h3>Procedimento para executar os testes: </h3> 
 <ul>
-    <li>Escreva seu cenário de teste no arquivo <code>spec.json</code> na pasta tests <li>
+    <li>Escreva seu cenário de teste no arquivo <code>spec.json</code> na pasta tests </li>
     Seu cenário de teste deve ter o seguinte formato:  
     <blockquote>Exemplo de formato:</blockquote>
 
-        ```JSON
-            {
-                "dddOrigemValue": "11",
-                "dddDestinoValue": "16",
-                "planoValue": "FaleMais30",
-                "tempoValue": "20",
-                "resultadoSemPlano": "38.00",
-                "resultadoComPlano": "0.00"
-            }
-        ```
-    sendo dddOrigemValue, o DDD de origem, dddDestinoValue, o DDD de destino, planoValue, o plano FaleMais (entre as opções: 'FaleMais30', 'FaleMais60', 'FaleMais120'), tempoValue o tempo em minutos, resultadoSemPlano o resultado do cenário sem o plano, resultadoComPlano o resultado do cenário com plano. 
-
-    <li>Executar então o comando <code>npm test form-calculo</code> no diretório raiz<li>
+       
+      {
+          "dddOrigemValue": "11",
+          "dddDestinoValue": "16",
+          "planoValue": "FaleMais30",
+          "tempoValue": "20",
+          "resultadoSemPlano": "38.00",
+          "resultadoComPlano": "0.00"
+      }
+       
+  <li>sendo dddOrigemValue, o DDD de origem, dddDestinoValue, o DDD de destino, planoValue, o plano FaleMais (entre as opções: 'FaleMais30', 'FaleMais60', 'FaleMais120'), tempoValue o tempo em minutos, resultadoSemPlano o resultado do cenário sem o plano, resultadoComPlano o resultado do cenário com plano. </li>
+  <li>Executar então o comando <code>npm test form-calculo</code> no diretório raiz</li>
 </ul>
 
 <h3>Estrutura</h3>
-Em <code>src/test/</code> os testes da aplicação
-Em <code>src/service/</code> a função de cálculo dos preços dos planos 
-Em <code>src/styles/</code> arquivos de estilização
-Em <code>src/pages/</code> o componente principal da aplicação Form.js
+<ul>
+  <li> Em <code>src/test/</code> os testes da aplicação </li>
+  <li> Em <code>src/service/</code> a função de cálculo dos preços dos planos </li>
+  <li> Em <code>src/styles/</code> arquivos de estilização</li>
+  <li> Em <code>src/pages/</code> o componente principal da aplicação Form.js </li>
+</ul> 
 
 
 <h3>Observações</h3>
