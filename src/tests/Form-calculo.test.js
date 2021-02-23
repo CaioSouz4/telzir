@@ -69,8 +69,8 @@ describe('teste de calculo dos planos de DDD', () => {
             expect(dddDestino.value).toEqual( spec.dddDestinoValue)
             expect(tempo.value).toEqual(spec.tempoValue)
             expect(plano.value).toEqual(spec.planoValue)    
-            expect(screen.getByTestId('semPlano')).toHaveTextContent(spec.resultadoSemPlano);
-            expect(screen.getByTestId('comPlano')).toHaveTextContent(spec.resultadoComPlano);
+            expect(getByTestId('comPlano').textContent).toEqual("R$ " +spec.resultadoComPlano)
+            expect(getByTestId('semPlano').textContent).toEqual("R$ " +spec.resultadoSemPlano)
 
             fireEvent.change(dddOrigem, {
                 target: { value: '' }

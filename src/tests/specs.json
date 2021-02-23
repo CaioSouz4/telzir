@@ -52,6 +52,16 @@
         "tempoValue": "200",
         "resultadoSemPlano": "220.00",
         "resultadoComPlano": "169.40"
+    },
+
+    {
+        "dddOrigemValue": "11",
+        "dddDestinoValue": "17",
+        "planoValue": "FaleMais60",
+        "tempoValue": "80",
+        "resultadoSemPlano": "136.00",
+        "resultadoComPlano": "37.40"
     }
+
     
 ]
